@@ -14,3 +14,13 @@ import Numlookupapi
 let client = NumlookupApiClient(configuration: .init(apiKey: "YOUR_API_KEY"))
 let result = try await client.validate(number: "+14155552671") 
 ```
+
+## Examples
+
+### Batch validation
+```swift
+for n in ["+14155552671", "+49891234567"] {
+  let res = try await client.validate(number: n)
+  print(res)
+}
+```
